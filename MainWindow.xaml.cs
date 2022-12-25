@@ -25,6 +25,10 @@ namespace Lab5Wpf
         public MainWindow()
         {
             InitializeComponent();
+            List<string> styles = new List<string>() { "LightTheme", "DarkTheme" };
+            styleBox.ItemsSource = styles;
+            styleBox.SelectionChanged += ThemeChange;
+            styleBox.SelectedIndex = 0;
         }
 
 
@@ -116,7 +120,19 @@ namespace Lab5Wpf
         {
             textBox.Foreground = Brushes.Red;
         }
+        private void ThemeChange(object sender, SelectionChangedEventArgs e)
+        {
+            int styleIndex = styleBox.SelectedIndex;
+            Uri uri = new Uri("LightTheme.xaml", UriKind.Relative);
+            if (styleIndex == 1)
+            {
+                uri = new Uri("DarkTheme.xaml", UriKind.Relative);
+            }
+            ResourceDictionary resource = Application.LoadComponent(uri) as ResourceDictionary;
+            Application.Current.Resources.Clear();
+            Application.Current.Resources.MergedDictionaries.Add(resource);
 
-   
+        }
+
     }
 }
