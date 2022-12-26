@@ -56,23 +56,23 @@ namespace Lab5Wpf
             Application.Current.Shutdown();
         }
 
-        public void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            string fontName = (sender as ComboBox).SelectedItem as string;
-            if (textBox != null)
-            {
-                textBox.FontFamily = new FontFamily(fontName);
-            }
-        }
+        //public void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    string fontName = (sender as ComboBox).SelectedItem as string;
+        //    if (textBox != null)
+        //    {
+        //        textBox.FontFamily = new FontFamily(fontName);
+        //    }
+        //}
 
-        private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        {
-            string fontName1 = (sender as ComboBox).SelectedItem as string;
-            if (textBox != null)
-            {
-                textBox.FontSize = FontSize;
-            }
-        }
+        //private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        //{
+        //    string fontName1 = (sender as ComboBox).SelectedItem as string;
+        //    if (textBox != null)
+        //    {
+        //        textBox.FontSize = FontSize;
+        //    }
+        //}
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
